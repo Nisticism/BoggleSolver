@@ -1,0 +1,33 @@
+<resources>
+
+    //app name
+    <string name="app_name">Boggle This!</string>
+
+    //titles
+    <string name="title_boggle">Boggle</string>
+    <string name="title_wordsearch">Wordsearch</string>
+    <string name="title_ocr">OCR</string>
+
+    //messages
+    <string name="boggle_message">Welcome to Boggle Mode!</string>
+    <string name="wordsearch_message">Welcome to Wordsearch Mode!</string>
+    <string name="ocr_message">Welcome to OCR Mode!</string>
+    <string name="app_name_message">Welcome to Boggle This!</string>
+
+    //misc/menus
+    <string name="action_settings">Settings</string>
+    <string name="action_login">Login</string>
+    <string name="more_options">More Options</string>
+
+    //more_options menu
+    <string name="load_boggle_game">Load Boggle Game</string>
+    <string name="help">Help</string>
+    <string name="about_app">About App</string>
+    <string name="exit_app">Exit App</string>
+
+    //buttons
+    <string name="capture_board">Capture Board</string>
+    <string name="capture_wordsearch">Capture Wordsearch</string>
+    <string name="capture_free_text">Capture Text</string>
+
+</resources>
