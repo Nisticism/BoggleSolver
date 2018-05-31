@@ -21,6 +21,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -31,6 +34,7 @@ import java.util.Date;
 public class Boggle extends MainActivity {
     ImageView camArea;
     ImageButton OMenu;
+    Button solve;
     EditText editText;
     EditText editText1;
     EditText editText2;
@@ -50,6 +54,28 @@ public class Boggle extends MainActivity {
     EditText editText13;
     EditText editText14;
     EditText editText15;
+
+    String aa1;
+    String aa2;
+    String aa3;
+    String aa4;
+
+    String bb1;
+    String bb2;
+    String bb3;
+    String bb4;
+
+    String cc1;
+    String cc2;
+    String cc3;
+    String cc4;
+
+    String dd1;
+    String dd2;
+    String dd3;
+    String dd4;
+
+    TextView matrixdisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,9 +104,28 @@ public class Boggle extends MainActivity {
         editText14 = findViewById(R.id.editText14);
         editText15 = findViewById(R.id.editText15);
 
+        matrixdisplay = findViewById(R.id.matrixdisplay);
 
         camArea = findViewById(R.id.camArea);
         Button camButton = findViewById(R.id.camButton);
+
+        Button Solve = findViewById(R.id.buttonSolver);
+        Solve.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StringGetter();
+                //SolverChecker();
+                Toast.makeText(getApplicationContext(), "Hi", Toast.LENGTH_SHORT).show();
+                String line1 = "| " + aa1 + " |" + aa2 + " |" + aa3 + " |" + aa4 + " |";
+                String line2 = bb1 + bb2 + bb3 + bb4;
+                String line3 = cc1 + cc2 + cc3 + cc4;
+                String line4 = dd1 + dd2 + dd3 + dd4;
+                matrixdisplay.setText("----------------" + "\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n");
+            }
+        });
+
+        final ImageButton oMenu = findViewById(R.id.oMenuID);
+        oMenu.setOnClickListener(oMenuListener);
 
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -121,15 +166,38 @@ public class Boggle extends MainActivity {
         }
     }
 
-    private Button.OnClickListener b = new Button.OnClickListener() {
-        @Override
-        public void onClick(View v) {
+//    public void SolverChecker() {
+//
+//        if (aa1.length() != 1 || aa2.length() != 1 || aa3.length() != 1 || aa4.length() != 1 || bb1.length() != 1 || bb2.length() != 1 || bb3.length() != 1 || bb4.length() != 1 || cc1.length() != 1 || cc2.length() != 1 || cc3.length() != 1 || cc4.length() != 1 || dd1.length() != 1 || dd2.length() != 1 || dd3.length() != 1 || dd4.length() != 1) {
+//            Toast.makeText(getApplicationContext(), "Please enter 1 letter per field", Toast.LENGTH_SHORT).show();
+//        }
+//        else if (aa1.length() == 1 && aa2.length() == 1 && aa3.length() == 1 && aa4.length() == 1 && bb1.length() == 1 && bb2.length() == 1 && bb3.length() == 1 && bb4.length() == 1 && cc1.length() == 1 && cc2.length() == 1 && cc3.length() == 1 && cc4.length() == 1 && dd1.length() == 1 && dd2.length() == 1 && dd3.length() == 1 && dd4.length() == 1) {
+//            new SolverOpener(aa1,aa2,aa3,aa4,bb1,bb2,bb3,bb4,cc1,cc2,cc3,cc4,dd1,dd2,dd3,dd4);
+//            frame.dispose();
+//        }
+//    }
 
-        }
+    public void StringGetter() {
+        aa1 = editText.getText().toString();
+        aa2 = editText1.getText().toString();
+        aa3 = editText2.getText().toString();
+        aa4 = editText3.getText().toString();
 
-    };
+        bb1 = editText4.getText().toString();
+        bb2 = editText5.getText().toString();
+        bb3 = editText6.getText().toString();
+        bb4 = editText7.getText().toString();
 
+        cc1 = editText8.getText().toString();
+        cc2 = editText9.getText().toString();
+        cc3 = editText10.getText().toString();
+        cc4 = editText11.getText().toString();
 
+        dd1 = editText12.getText().toString();
+        dd2 = editText13.getText().toString();
+        dd3 = editText14.getText().toString();
+        dd4 = editText15.getText().toString();
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

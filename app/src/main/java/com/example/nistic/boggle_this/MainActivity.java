@@ -17,7 +17,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     protected TextView mTextMessage;
-    ImageButton oMenuID;
+    ImageButton oMenu;
+    PopupMenu popupMenu;
 
     //View v = findViewById(R.id.moreoptions);
     protected BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -46,17 +47,32 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, "" + item.getTitle(), Toast.LENGTH_SHORT).show();
             if (item.getTitle() == "Help") {
                 startActivity(new Intent(getBaseContext(), Help.class));
+                return true;
             }
-            return true;
+            if (item.getTitle() == "About App") {
+                startActivity(new Intent(getBaseContext(), AboutApp.class));
+                return true;
+            }
+            if (item.getTitle() == "Exit App") {
+                finish();
+                System.exit(0);
+                return true;
+            }
+            if (item.getTitle() == "Load Boggle Image") {
+                startActivity(new Intent(getBaseContext(), Help.class));
+                return true;
+            }
+            return false;
         }
     };
 
     public View.OnClickListener oMenuListener = new View.OnClickListener() {
         @Override
-        public void onClick(View v) {
-            PopupMenu popupMenu = new PopupMenu(MainActivity.this, oMenuID);
+        public void onClick(View oMenu) {
+            PopupMenu popupMenu = new PopupMenu(MainActivity.this, oMenu);
             popupMenu.getMenuInflater().inflate(R.menu.moreoptions, popupMenu.getMenu());
             popupMenu.setOnMenuItemClickListener(popupListener);
+            popupMenu.show();
         }
     };
 
@@ -64,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        oMenuID = findViewById(R.id.oMenuID);
+        final ImageButton oMenu = findViewById(R.id.oMenuID);
+        oMenu.setOnClickListener(oMenuListener);
 
-        oMenuID.setOnClickListener(oMenuListener);
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
     }

@@ -20,7 +20,7 @@
     <string name="more_options">More Options</string>
 
     //more_options menu
-    <string name="load_boggle_game">Load Boggle Game</string>
+    <string name="load_boggle_image">Load Boggle Image</string>
     <string name="help">Help</string>
     <string name="about_app">About App</string>
     <string name="exit_app">Exit App</string>
