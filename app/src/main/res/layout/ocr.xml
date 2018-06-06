@@ -45,7 +45,7 @@
         android:layout_marginStart="8dp"
         android:background="@android:color/holo_green_dark"
         android:onClick="dispatchTakePictureIntent"
-        android:text="@string/capture_board"
+        android:text="@string/capture_free_text"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toTopOf="@+id/camArea"
         app:layout_constraintEnd_toEndOf="parent"

@@ -4,6 +4,7 @@
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -25,11 +26,30 @@
             android:label="@string/title_boggle">
         </activity>
         <activity
+            android:name=".Boggle5x5"
+            android:label="@string/title_boggle5x5">
+        </activity>
+        <activity
             android:name=".Wordsearch"
             android:label="@string/title_wordsearch">
         </activity>
         <activity
             android:name=".OCR"
+            android:label="@string/title_ocr">
+        </activity>
+        <activity
+            android:name=".AboutApp"
+            android:label="@string/title_aboutApp">
+        </activity>
+        <activity
+            android:name=".DisplayResults"
+            android:label="@string/title_displayResults">
+        </activity>
+        <activity
+            android:name=".Help"
+            android:label="@string/title_helpScreen">
+        </activity>
+        <activity android:name=".OCRCam"
             android:label="@string/title_ocr">
         </activity>
         <provider
@@ -40,6 +60,8 @@
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths"></meta-data>
+            <meta-data android:name="com.google.android.gms.vision.DEPENDENCIES"
+                android:value="ocr"/>
         </provider>
     </application>
 </manifest>

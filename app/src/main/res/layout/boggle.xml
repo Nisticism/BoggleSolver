@@ -23,7 +23,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="d4"
+        android:text="d"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText11"
@@ -41,7 +41,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="d2"
+        android:text="r"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editText14"
         app:layout_constraintStart_toEndOf="@+id/editText12"
@@ -59,7 +59,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="d3"
+        android:text="a"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editText15"
         app:layout_constraintTop_toBottomOf="@+id/editText10"
@@ -76,7 +76,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="d1"
+        android:text="o"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8"
@@ -92,7 +92,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="c4"
+        android:text="e"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
@@ -106,7 +106,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="c3"
+        android:text="u"
         app:layout_constraintEnd_toStartOf="@+id/editText11"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
@@ -121,7 +121,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="c2"
+        android:text="y"
         app:layout_constraintEnd_toStartOf="@+id/editText10"
         app:layout_constraintStart_toEndOf="@+id/editText8"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
@@ -136,7 +136,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="c1"
+        android:text="d"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -150,7 +150,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="b4"
+        android:text="h"
         app:layout_constraintEnd_toEndOf="@+id/include"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
@@ -164,7 +164,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="b3"
+        android:text="g"
         app:layout_constraintEnd_toStartOf="@+id/editText7"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -179,7 +179,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="b2"
+        android:text="c"
         app:layout_constraintEnd_toStartOf="@+id/editText6"
         app:layout_constraintStart_toEndOf="@+id/editText4"
         app:layout_constraintTop_toBottomOf="@+id/editText1" />
@@ -194,7 +194,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="b1"
+        android:text="m"
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -208,7 +208,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="a4"
+        android:text="e"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSolver" />
 
@@ -222,7 +222,7 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="a3"
+        android:text="i"
         app:layout_constraintEnd_toStartOf="@+id/editText3"
         app:layout_constraintTop_toBottomOf="@+id/buttonSolver" />
 
@@ -236,7 +236,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="a1"
+        android:text="s"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -263,7 +263,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="a2"
+        android:text="r"
         app:layout_constraintEnd_toStartOf="@+id/editText2"
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
@@ -321,8 +321,8 @@
 
     <TextView
         android:id="@+id/matrixdisplay"
-        android:layout_width="82dp"
-        android:layout_height="68dp"
+        android:layout_width="124dp"
+        android:layout_height="95dp"
         android:layout_marginStart="28dp"
         android:layout_marginTop="220dp"
         android:text=""

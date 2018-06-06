@@ -34,48 +34,71 @@ import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Boggle extends MainActivity {
+public class Boggle5x5 extends MainActivity {
     ImageView camArea;
+    ImageButton OMenu;
+    Button solve;
+    EditText editTexta1;
+    EditText editTexta2;
+    EditText editTexta3;
+    EditText editTexta4;
+    EditText editTexta5;
 
-    EditText editText;
-    EditText editText1;
-    EditText editText2;
-    EditText editText3;
+    EditText editTextb1;
+    EditText editTextb2;
+    EditText editTextb3;
+    EditText editTextb4;
+    EditText editTextb5;
 
-    EditText editText4;
-    EditText editText5;
-    EditText editText6;
-    EditText editText7;
+    EditText editTextc1;
+    EditText editTextc2;
+    EditText editTextc3;
+    EditText editTextc4;
+    EditText editTextc5;
 
-    EditText editText8;
-    EditText editText9;
-    EditText editText10;
-    EditText editText11;
+    EditText editTextd1;
+    EditText editTextd2;
+    EditText editTextd3;
+    EditText editTextd4;
+    EditText editTextd5;
 
-    EditText editText12;
-    EditText editText13;
-    EditText editText14;
-    EditText editText15;
+    EditText editTexte1;
+    EditText editTexte2;
+    EditText editTexte3;
+    EditText editTexte4;
+    EditText editTexte5;
+
+
 
     String aa1;
     String aa2;
     String aa3;
     String aa4;
+    String aa5;
 
     String bb1;
     String bb2;
     String bb3;
     String bb4;
+    String bb5;
 
     String cc1;
     String cc2;
     String cc3;
     String cc4;
+    String cc5;
 
     String dd1;
     String dd2;
     String dd3;
     String dd4;
+    String dd5;
+
+    String ee1;
+    String ee2;
+    String ee3;
+    String ee4;
+    String ee5;
 
     String results;
     String sendresults;
@@ -85,37 +108,45 @@ public class Boggle extends MainActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.boggle);
+        setContentView(R.layout.boggle5x5);
         mTextMessage = findViewById(R.id.mTextMessageID);
         mTextMessage.setText(R.string.boggle_message);
 
-        editText = findViewById(R.id.editText);
-        editText1 = findViewById(R.id.editText1);
-        editText2 = findViewById(R.id.editText2);
-        editText3 = findViewById(R.id.editText3);
+        editTexta1 = findViewById(R.id.editTexta1);
+        editTexta2 = findViewById(R.id.editTexta2);
+        editTexta3 = findViewById(R.id.editTexta3);
+        editTexta4 = findViewById(R.id.editTexta4);
+        editTexta5 = findViewById(R.id.editTexta5);
 
-        editText4 = findViewById(R.id.editText4);
-        editText5 = findViewById(R.id.editText5);
-        editText6 = findViewById(R.id.editText6);
-        editText7 = findViewById(R.id.editText7);
+        editTextb1 = findViewById(R.id.editTextb1);
+        editTextb2 = findViewById(R.id.editTextb2);
+        editTextb3 = findViewById(R.id.editTextb3);
+        editTextb4 = findViewById(R.id.editTextb4);
+        editTextb5 = findViewById(R.id.editTextb5);
 
-        editText8 = findViewById(R.id.editText8);
-        editText9 = findViewById(R.id.editText9);
-        editText10 = findViewById(R.id.editText10);
-        editText11 = findViewById(R.id.editText11);
+        editTextc1 = findViewById(R.id.editTextc1);
+        editTextc2 = findViewById(R.id.editTextc2);
+        editTextc3 = findViewById(R.id.editTextc3);
+        editTextc4 = findViewById(R.id.editTextc4);
+        editTextc5 = findViewById(R.id.editTextc5);
 
-        editText12 = findViewById(R.id.editText12);
-        editText13 = findViewById(R.id.editText13);
-        editText14 = findViewById(R.id.editText14);
-        editText15 = findViewById(R.id.editText15);
+        editTextd1 = findViewById(R.id.editTextd1);
+        editTextd2 = findViewById(R.id.editTextd2);
+        editTextd3 = findViewById(R.id.editTextd3);
+        editTextd4 = findViewById(R.id.editTextd4);
+        editTextd5 = findViewById(R.id.editTextd5);
+
+        editTexte1 = findViewById(R.id.editTexte1);
+        editTexte2 = findViewById(R.id.editTexte2);
+        editTexte3 = findViewById(R.id.editTexte3);
+        editTexte4 = findViewById(R.id.editTexte4);
+        editTexte5 = findViewById(R.id.editTexte5);
 
         matrixdisplay = findViewById(R.id.matrixdisplay);
 
         camArea = findViewById(R.id.camArea);
         Button camButton = findViewById(R.id.camButton);
-
         Button Solve = findViewById(R.id.buttonSolver);
-
         Button ToggleBoard = findViewById(R.id.button2);
         Solve.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,11 +154,12 @@ public class Boggle extends MainActivity {
                 StringGetter();
                 //SolverChecker();
                 Toast.makeText(getApplicationContext(), "Hi", Toast.LENGTH_SHORT).show();
-                String line1 = "| " + aa1 + " | " + aa2 + " | " + aa3 + " | " + aa4 + " |";
-                String line2 = "| " + bb1 + " | " + bb2 + " | " + bb3 + " | " + bb4 + " |";
-                String line3 = "| " + cc1 + " | " + cc2 + " | " + cc3 + " | " + cc4 + " |";
-                String line4 = "| " + dd1 + " | " + dd2 + " | " + dd3 + " | " + dd4 + " |";
-                matrixdisplay.setText("-------------------------------" + "\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + "-------------------------------");
+                String line1 = "|  " + aa1 + "  |  " + aa2 + "  |  " + aa3 + "  |  " + aa4 + "  |  " + aa5 + "  |";
+                String line2 = "|  " + bb1 + "  |  " + bb2 + "  |  " + bb3 + "  |  " + bb4 + "  |  " + bb5 + "  |";
+                String line3 = "|  " + cc1 + "  |  " + cc2 + "  |  " + cc3 + "  |  " + cc4 + "  |  " + cc5 + "  |";
+                String line4 = "|  " + dd1 + "  |  " + dd2 + "  |  " + dd3 + "  |  " + dd4 + "  |  " + dd5 + "  |";
+                String line5 = "|  " + ee1 + "  |  " + ee2 + "  |  " + ee3 + "  |  " + ee4 + "  |  " + ee5 + "  |";
+                matrixdisplay.setText("-------------------------------" + "\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5 + "\n" + "-------------------------------");
 
 
                 // CODE DIRECTLY FROM PC VERSION
@@ -135,11 +167,11 @@ public class Boggle extends MainActivity {
 
 
                 //String[] bogrows = {a1+a2+a3+a4, b1+b2+b3+b4, c1+c2+c3+c4, d1+d2+d3+d4};
-                if (aa1.length() != 1 || aa2.length() != 1 || aa3.length() != 1 || aa4.length() != 1 || bb1.length() != 1 || bb2.length() != 1 || bb3.length() != 1 || bb4.length() != 1 || cc1.length() != 1 || cc2.length() != 1 || cc3.length() != 1 || cc4.length() != 1 || dd1.length() != 1 || dd2.length() != 1 || dd3.length() != 1 || dd4.length() != 1) {
-                    Toast.makeText(Boggle.this, "Please enter one letter in each box", Toast.LENGTH_SHORT).show();
+                if (aa1.length() != 1 || aa2.length() != 1 || aa3.length() != 1 || aa4.length() != 1 || aa5.length() != 1 || bb1.length() != 1 || bb2.length() != 1 || bb3.length() != 1 || bb4.length() != 1 || bb5.length() != 1 || cc1.length() != 1 || cc2.length() != 1 || cc3.length() != 1 || cc4.length() != 1 || cc5.length() != 1 || dd1.length() != 1 || dd2.length() != 1 || dd3.length() != 1 || dd4.length() != 1 || dd5.length() != 1 || ee1.length() != 1 || ee2.length() != 1 || ee3.length() != 1 || ee4.length() != 1 || ee5.length() != 1 ) {
+                    Toast.makeText(Boggle5x5.this, "Please enter one letter in each box", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                String commaboard = aa1+aa2+aa3+aa4+","+bb1+bb2+bb3+bb4+","+cc1+cc2+cc3+cc4+","+dd1+dd2+dd3+dd4;
+                String commaboard = aa1+aa2+aa3+aa4+aa5+","+bb1+bb2+bb3+bb4+bb5+","+cc1+cc2+cc3+cc4+cc5+","+dd1+dd2+dd3+dd4+dd5+","+ee1+ee2+ee3+ee4+ee5;
                 //String[] allwords;
                 //String commaboard2 = "ABCD,RHAO,OSND,OTHA";
 
@@ -187,7 +219,7 @@ public class Boggle extends MainActivity {
 
                 //EXIT CODE FROM PC VERSION
 
-                Intent intent = new Intent(Boggle.this, DisplayResults.class);
+                Intent intent = new Intent(Boggle5x5.this, DisplayResults.class);
                 intent.putExtra("boggle_results", results);
                 startActivity(intent);
             }
@@ -207,10 +239,11 @@ public class Boggle extends MainActivity {
         ToggleBoard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View ToggleBoard) {
-                Intent intent = new Intent(Boggle.this, Boggle5x5.class);
+                Intent intent = new Intent(Boggle5x5.this, Boggle.class);
                 startActivity(intent);
             }
         });
+
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -257,25 +290,35 @@ public class Boggle extends MainActivity {
 //    }
 
     public void StringGetter() {
-        aa1 = editText.getText().toString();
-        aa2 = editText1.getText().toString();
-        aa3 = editText2.getText().toString();
-        aa4 = editText3.getText().toString();
+        aa1 = editTexta1.getText().toString();
+        aa2 = editTexta2.getText().toString();
+        aa3 = editTexta3.getText().toString();
+        aa4 = editTexta4.getText().toString();
+        aa5 = editTexta5.getText().toString();
 
-        bb1 = editText4.getText().toString();
-        bb2 = editText5.getText().toString();
-        bb3 = editText6.getText().toString();
-        bb4 = editText7.getText().toString();
+        bb1 = editTextb1.getText().toString();
+        bb2 = editTextb2.getText().toString();
+        bb3 = editTextb3.getText().toString();
+        bb4 = editTextb4.getText().toString();
+        bb5 = editTextb5.getText().toString();
 
-        cc1 = editText8.getText().toString();
-        cc2 = editText9.getText().toString();
-        cc3 = editText10.getText().toString();
-        cc4 = editText11.getText().toString();
+        cc1 = editTextc1.getText().toString();
+        cc2 = editTextc2.getText().toString();
+        cc3 = editTextc3.getText().toString();
+        cc4 = editTextc4.getText().toString();
+        cc5 = editTextc5.getText().toString();
 
-        dd1 = editText12.getText().toString();
-        dd2 = editText13.getText().toString();
-        dd3 = editText14.getText().toString();
-        dd4 = editText15.getText().toString();
+        dd1 = editTextd1.getText().toString();
+        dd2 = editTextd2.getText().toString();
+        dd3 = editTextd3.getText().toString();
+        dd4 = editTextd4.getText().toString();
+        dd5 = editTextd5.getText().toString();
+
+        ee1 = editTexte1.getText().toString();
+        ee2 = editTexte2.getText().toString();
+        ee3 = editTexte3.getText().toString();
+        ee4 = editTexte4.getText().toString();
+        ee5 = editTexte5.getText().toString();
     }
 
     @Override

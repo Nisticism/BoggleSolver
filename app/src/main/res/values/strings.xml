@@ -7,6 +7,10 @@
     <string name="title_boggle">Boggle</string>
     <string name="title_wordsearch">Wordsearch</string>
     <string name="title_ocr">OCR</string>
+    <string name="title_aboutApp">About App</string>
+    <string name="title_displayResults">Display Results</string>
+    <string name="title_helpScreen">Help</string>
+    <string name="title_boggle5x5">Boggle 5x5</string>
 
     //messages
     <string name="boggle_message">Welcome to Boggle Mode!</string>

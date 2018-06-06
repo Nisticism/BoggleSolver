@@ -45,22 +45,21 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
             Toast.makeText(MainActivity.this, "" + item.getTitle(), Toast.LENGTH_SHORT).show();
-            if (item.getTitle() == "Help") {
-                startActivity(new Intent(getBaseContext(), Help.class));
-                return true;
-            }
-            if (item.getTitle() == "About App") {
-                startActivity(new Intent(getBaseContext(), AboutApp.class));
-                return true;
-            }
-            if (item.getTitle() == "Exit App") {
-                finish();
-                System.exit(0);
-                return true;
-            }
-            if (item.getTitle() == "Load Boggle Image") {
-                startActivity(new Intent(getBaseContext(), Help.class));
-                return true;
+            switch (item.getItemId()) {
+                case R.id.help_screen:
+                    startActivity(new Intent(getBaseContext(), Help.class));
+                    return true;
+                case R.id.about_app:
+                    startActivity(new Intent(getBaseContext(), AboutApp.class));
+                    return true;
+                case R.id.exit_app:
+                    finish();
+                    moveTaskToBack(true);
+                    return true;
+
+                case R.id.load_boggle:
+                    startActivity(new Intent(getBaseContext(), Help.class));
+                    return true;
             }
             return false;
         }
@@ -85,5 +84,6 @@ public class MainActivity extends AppCompatActivity {
 
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.getMenu().findItem(R.id.navigation_boggle).setChecked(false);
     }
 }

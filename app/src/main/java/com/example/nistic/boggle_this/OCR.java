@@ -10,6 +10,7 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import java.io.File;
 import java.io.IOException;
@@ -32,13 +33,16 @@ public class OCR extends MainActivity {
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View camButton) {
-                dispatchTakePictureIntent();
-                //onActivityResult(1, -1, null);
+                startActivity(new Intent(getBaseContext(), OCRCam.class));
             }
         });
 
+        final ImageButton oMenu = findViewById(R.id.oMenuID);
+        oMenu.setOnClickListener(oMenuListener);
+
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navigation.getMenu().findItem(R.id.navigation_ocr).setChecked(true);
     }
 
     static final int REQUEST_TAKE_PHOTO = 1;
