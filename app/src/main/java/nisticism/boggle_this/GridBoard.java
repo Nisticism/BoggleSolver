@@ -1,4 +1,4 @@
-package com.example.nistic.boggle_this;
+package nisticism.boggle_this;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Set;

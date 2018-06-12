@@ -1,30 +1,13 @@
-package com.example.nistic.boggle_this;
+package nisticism.boggle_this;
 
 import android.Manifest;
-import android.app.Activity;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.os.Parcelable;
-import android.provider.MediaStore;
-import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
-import android.support.constraint.Constraints;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.FileProvider;
 import android.text.InputFilter;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,15 +20,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
-import java.net.URI;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 import java.util.Random;
+
+import nisticism.boggle_this.R;
 
 import static android.app.PendingIntent.getActivity;
 
@@ -95,7 +74,6 @@ public class Boggle extends MainActivity {
     String dd4;
 
     String results;
-    String sendresults;
 
     ImageView matrixdisplay;
     TextView matrixdisplay2;
@@ -104,6 +82,7 @@ public class Boggle extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.boggle);
+        setTitle(R.string.title_boggle2);
         mTextMessage = findViewById(R.id.mTextMessageID);
         mTextMessage.setText(R.string.boggle_message);
 

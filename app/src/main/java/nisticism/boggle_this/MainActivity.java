@@ -1,9 +1,5 @@
-package com.example.nistic.boggle_this;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
+package nisticism.boggle_this;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;

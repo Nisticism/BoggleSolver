@@ -1,4 +1,4 @@
-package com.example.nistic.boggle_this;
+package nisticism.boggle_this;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;

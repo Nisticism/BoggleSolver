@@ -1,4 +1,4 @@
-package com.example.nistic.boggle_this;
+package nisticism.boggle_this;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.concurrent.Callable;
