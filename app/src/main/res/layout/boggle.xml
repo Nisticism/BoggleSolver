@@ -23,7 +23,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="d"
+        android:text="D"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText11"
@@ -41,7 +46,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="r"
+        android:text="R"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editText14"
         app:layout_constraintStart_toEndOf="@+id/editText12"
@@ -59,7 +69,12 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="a"
+        android:text="A"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/editText15"
         app:layout_constraintTop_toBottomOf="@+id/editText10"
@@ -76,7 +91,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="o"
+        android:text="O"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText8"
@@ -92,7 +112,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="e"
+        android:text="E"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText7" />
 
@@ -106,7 +131,12 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="u"
+        android:text="U"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toStartOf="@+id/editText11"
         app:layout_constraintTop_toBottomOf="@+id/editText6" />
 
@@ -121,7 +151,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="y"
+        android:text="Y"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toStartOf="@+id/editText10"
         app:layout_constraintStart_toEndOf="@+id/editText8"
         app:layout_constraintTop_toBottomOf="@+id/editText5" />
@@ -136,7 +171,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="d"
+        android:text="D"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText4" />
 
@@ -150,7 +190,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="h"
+        android:text="H"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toEndOf="@+id/include"
         app:layout_constraintTop_toBottomOf="@+id/editText3" />
 
@@ -164,7 +209,12 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="12dp"
         android:inputType="text"
-        android:text="g"
+        android:text="G"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toStartOf="@+id/editText7"
         app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
@@ -179,7 +229,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="c"
+        android:text="I"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toStartOf="@+id/editText6"
         app:layout_constraintStart_toEndOf="@+id/editText4"
         app:layout_constraintTop_toBottomOf="@+id/editText1" />
@@ -194,7 +249,12 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="m"
+        android:text="M"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toBottomOf="@+id/editText" />
 
@@ -208,7 +268,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="e"
+        android:text="E"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonSolver" />
 
@@ -222,7 +287,12 @@
         android:layout_marginEnd="72dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="i"
+        android:text="A"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toStartOf="@+id/editText3"
         app:layout_constraintTop_toBottomOf="@+id/buttonSolver" />
 
@@ -236,21 +306,32 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="s"
+        android:text="S"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
         android:id="@+id/mTextMessageID"
-        android:layout_width="264dp"
-        android:layout_height="35dp"
-        android:layout_marginBottom="476dp"
+        android:layout_width="309dp"
+        android:layout_height="53dp"
+        android:layout_marginBottom="428dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:textSize="20sp"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.091"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintVertical_bias="0.363" />
 
     <EditText
 
@@ -263,70 +344,121 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="r"
+        android:text="R"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintEnd_toStartOf="@+id/editText2"
         app:layout_constraintStart_toEndOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
-    <!--<ImageView-->
-        <!--android:id="@+id/camArea"-->
-        <!--android:layout_width="330dp"-->
-        <!--android:layout_height="326dp"-->
-        <!--android:layout_marginBottom="56dp"-->
-        <!--android:layout_marginStart="24dp"-->
-        <!--android:layout_weight="9"-->
-        <!--app:layout_constraintBottom_toBottomOf="@+id/include"-->
-        <!--app:layout_constraintStart_toStartOf="@+id/include" />-->
+    <ImageView
+        android:id="@+id/camArea"
+        android:layout_width="153dp"
+        android:layout_height="198dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="9"
+        android:rotation="90"
+        android:padding="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/camButton"
-        android:layout_width="198dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_width="128dp"
+        android:layout_height="45dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="40dp"
-        android:background="@android:color/holo_green_dark"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/mybutton2"
         android:onClick="dispatchTakePictureIntent"
         android:text="@string/capture_board"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/camArea"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonSolver"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_height="54dp"
+        android:layout_marginEnd="7dp"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/mybutton"
+        android:bottomLeftRadius="10dp"
+        android:bottomRightRadius="10dp"
         android:text="Solve"
+        android:topLeftRadius="10dp"
+        android:topRightRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="130dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="112dp"
+        android:layout_marginStart="7dp"
+        android:background="@drawable/mybutton"
         android:text="Switch to 5x5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
         android:id="@+id/matrixdisplay"
-        android:layout_width="124dp"
-        android:layout_height="95dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="220dp"
+        android:layout_width="158dp"
+        android:layout_height="121dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="240dp"
+        android:src="@drawable/bogglegrid4x4"
         android:text=""
+        android:textColor="@color/white"
+        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/matrixdisplay2"
+        android:layout_width="137dp"
+        android:layout_height="138dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="405dp"
+        android:textColor="@color/realldarkgreen"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toStartOf="@+id/matrixdisplay"
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <Button
+        android:id="@+id/random_grid"
+        android:layout_width="101dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/mybutton"
+        android:text="@string/randomize_grid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.85" />
 
 </android.support.constraint.ConstraintLayout>

@@ -22,7 +22,12 @@
         android:layout_marginStart="324dp"
         android:layout_marginTop="220dp"
         android:inputType="text"
-        android:text="e"
+        android:text="E"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -36,7 +41,12 @@
         android:layout_marginStart="248dp"
         android:layout_marginTop="220dp"
         android:inputType="text"
-        android:text="a"
+        android:text="A"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -50,7 +60,12 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="220dp"
         android:inputType="text"
-        android:text="p"
+        android:text="P"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -64,7 +79,12 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="220dp"
         android:inputType="text"
-        android:text="l"
+        android:text="L"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -78,7 +98,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="220dp"
         android:inputType="text"
-        android:text="n"
+        android:text="N"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -92,7 +117,12 @@
         android:layout_marginStart="324dp"
         android:layout_marginTop="164dp"
         android:inputType="text"
-        android:text="o"
+        android:text="O"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -106,7 +136,12 @@
         android:layout_marginStart="248dp"
         android:layout_marginTop="164dp"
         android:inputType="text"
-        android:text="q"
+        android:text="Q"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -120,7 +155,12 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="164dp"
         android:inputType="text"
-        android:text="r"
+        android:text="R"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -134,7 +174,12 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="164dp"
         android:inputType="text"
-        android:text="s"
+        android:text="S"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -148,7 +193,12 @@
         android:layout_marginStart="324dp"
         android:layout_marginTop="112dp"
         android:inputType="text"
-        android:text="d"
+        android:text="D"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -162,7 +212,12 @@
         android:layout_marginStart="248dp"
         android:layout_marginTop="112dp"
         android:inputType="text"
-        android:text="m"
+        android:text="M"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -176,7 +231,12 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="112dp"
         android:inputType="text"
-        android:text="a"
+        android:text="A"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -190,7 +250,12 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="112dp"
         android:inputType="text"
-        android:text="s"
+        android:text="S"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -204,7 +269,12 @@
         android:layout_marginStart="324dp"
         android:layout_marginTop="60dp"
         android:inputType="text"
-        android:text="l"
+        android:text="L"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -218,7 +288,12 @@
         android:layout_marginStart="248dp"
         android:layout_marginTop="60dp"
         android:inputType="text"
-        android:text="i"
+        android:text="I"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -232,7 +307,12 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="60dp"
         android:inputType="text"
-        android:text="e"
+        android:text="E"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -246,7 +326,12 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="60dp"
         android:inputType="text"
-        android:text="u"
+        android:text="U"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -260,7 +345,12 @@
         android:layout_marginStart="324dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="o"
+        android:text="O"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -274,7 +364,12 @@
         android:layout_marginStart="248dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="r"
+        android:text="R"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -288,7 +383,12 @@
         android:layout_marginStart="168dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="t"
+        android:text="T"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -302,7 +402,12 @@
         android:layout_marginStart="92dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="s"
+        android:text="S"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
@@ -317,7 +422,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="o"
+        android:text="O"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextc1"
@@ -333,7 +443,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:inputType="text"
-        android:text="t"
+        android:text="T"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextb1" />
 
@@ -347,7 +462,12 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="m"
+        android:text="M"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="@+id/include"
         app:layout_constraintTop_toBottomOf="@+id/editTexta1" />
 
@@ -361,32 +481,41 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:inputType="text"
-        android:text="a"
+        android:text="A"
+        android:textSize="20dp"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
 
     <TextView
         android:id="@+id/mTextMessageID"
 
-        android:layout_width="269dp"
-        android:layout_height="36dp"
-        android:textSize="22dp"
+        android:layout_width="325dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.321"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintVertical_bias="0.054" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/camArea"-->
-    <!--android:layout_width="330dp"-->
-    <!--android:layout_height="326dp"-->
-    <!--android:layout_marginBottom="56dp"-->
-    <!--android:layout_marginStart="24dp"-->
-    <!--android:layout_weight="9"-->
-    <!--app:layout_constraintBottom_toBottomOf="@+id/include"-->
-    <!--app:layout_constraintStart_toStartOf="@+id/include" />-->
+    <ImageView
+        android:id="@+id/camArea"
+        android:layout_width="139dp"
+        android:layout_height="139dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginStart="272dp"
+        android:layout_weight="9"
+        android:rotation="90"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
+        app:layout_constraintStart_toStartOf="@+id/include" />
 
     <Button
         android:id="@+id/camButton"
@@ -396,7 +525,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="92dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/mybutton2"
         android:onClick="dispatchTakePictureIntent"
         android:text="@string/capture_board"
         android:textColor="@android:color/white"
@@ -405,7 +534,7 @@
         app:layout_constraintHorizontal_bias="0.569"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.391" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/buttonSolver"
@@ -415,6 +544,7 @@
         android:layout_marginStart="148dp"
         android:layout_marginTop="92dp"
         android:text="Solve"
+        android:background="@drawable/mybutton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/button2"
@@ -422,21 +552,58 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        android:layout_width="121dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="92dp"
+        android:layout_marginStart="7dp"
+        android:background="@drawable/mybutton"
         android:text="Switch to 4x4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
         android:id="@+id/matrixdisplay"
-        android:layout_width="212dp"
-        android:layout_height="117dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="264dp"
+        android:layout_width="192dp"
+        android:layout_height="120dp"
+        android:layout_marginTop="268dp"
+        android:src="@drawable/bogglegrid5x5"
         android:text=""
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+    <TextView
+        android:id="@+id/matrixdisplay2"
+        android:layout_width="161dp"
+        android:layout_height="135dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="390dp"
+        android:textColor="@color/realldarkgreen"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.094"
+        app:layout_constraintStart_toStartOf="@+id/matrixdisplay"
+        app:layout_constraintTop_toTopOf="@+id/include" />
+
+    <Button
+        android:id="@+id/random_grid"
+        android:layout_width="101dp"
+        android:layout_height="93dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/mybutton"
+        android:text="@string/randomize_grid"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/include"
+        app:layout_constraintHorizontal_bias="0.554"
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.875" />
 
 </android.support.constraint.ConstraintLayout>

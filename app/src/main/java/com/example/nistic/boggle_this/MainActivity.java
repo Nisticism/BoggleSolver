@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     protected PopupMenu.OnMenuItemClickListener popupListener = new PopupMenu.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            Toast.makeText(MainActivity.this, "" + item.getTitle(), Toast.LENGTH_SHORT).show();
             switch (item.getItemId()) {
                 case R.id.help_screen:
                     startActivity(new Intent(getBaseContext(), Help.class));
@@ -53,12 +52,13 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(new Intent(getBaseContext(), AboutApp.class));
                     return true;
                 case R.id.exit_app:
+                    Toast.makeText(MainActivity.this, "Until next time!", Toast.LENGTH_SHORT).show();
                     finish();
                     moveTaskToBack(true);
                     return true;
 
                 case R.id.load_boggle:
-                    startActivity(new Intent(getBaseContext(), Help.class));
+                    startActivity(new Intent(getBaseContext(), LoadBoggleImage.class));
                     return true;
             }
             return false;

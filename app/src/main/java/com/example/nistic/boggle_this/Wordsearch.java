@@ -1,24 +1,31 @@
 package com.example.nistic.boggle_this;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Wordsearch extends MainActivity {
-    ImageView camArea;
+    private ImageView camArea;
+    Intent intent;
+    public  static final int RequestPermissionCode  = 1 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,11 +37,15 @@ public class Wordsearch extends MainActivity {
         camArea = findViewById(R.id.camArea);
         Button camButton = findViewById(R.id.camButton);
 
+        EnableRuntimePermission();
+
+
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View camButton) {
-                dispatchTakePictureIntent();
-                //onActivityResult(1, -1, null);
+            public void onClick(View v) {
+                intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                startActivityForResult(intent, 7);
             }
         });
 
@@ -46,56 +57,48 @@ public class Wordsearch extends MainActivity {
         navigation.getMenu().findItem(R.id.navigation_wordsearch).setChecked(true);
     }
 
-    static final int REQUEST_TAKE_PHOTO = 1;
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
-                // Error occurred while creating the File
+        if (requestCode == 7 && resultCode == RESULT_OK) {
 
-            }
-            // Continue only if the File was successfully created
-            if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.android.fileproviderx",
-                        photoFile);
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
-            }
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
+
+            camArea.setImageBitmap(bitmap);
         }
     }
+    public void EnableRuntimePermission(){
 
+        if (ActivityCompat.shouldShowRequestPermissionRationale(Wordsearch.this,
+                Manifest.permission.CAMERA))
+        {
+
+            //Toast.makeText(Boggle.this,"CAMERA permission allows us to Access CAMERA app", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            ActivityCompat.requestPermissions(Wordsearch.this,new String[]{
+                    Manifest.permission.CAMERA}, RequestPermissionCode);
+
+        }
+    }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            camArea.setImageBitmap(imageBitmap);
+    public void onRequestPermissionsResult(int RC, String per[], int[] PResult) {
+
+        switch (RC) {
+
+            case RequestPermissionCode:
+
+                if (PResult.length > 0 && PResult[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    //Toast.makeText(Boggle.this,"Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(Wordsearch.this,"Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
+
+                }
+                break;
         }
-    }
-
-    String mCurrentPhotoPath;
-
-    private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = image.getAbsolutePath();
-        return image;
     }
 }

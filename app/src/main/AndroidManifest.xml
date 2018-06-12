@@ -15,6 +15,10 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name">
+        </activity>
+        <activity
+            android:name=".Boggle"
+            android:label="@string/title_boggle2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,20 +26,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Boggle"
-            android:label="@string/title_boggle">
-        </activity>
-        <activity
             android:name=".Boggle5x5"
             android:label="@string/title_boggle5x5">
         </activity>
         <activity
             android:name=".Wordsearch"
-            android:label="@string/title_wordsearch">
+            android:label="@string/title_wordsearch2">
         </activity>
         <activity
             android:name=".OCR"
-            android:label="@string/title_ocr">
+            android:label="@string/title_ocr2">
         </activity>
         <activity
             android:name=".AboutApp"
@@ -51,6 +51,9 @@
         </activity>
         <activity android:name=".OCRCam"
             android:label="@string/title_ocr">
+        </activity>
+        <activity android:name=".LoadBoggleImage"
+            android:label="Load Boggle Image">
         </activity>
         <provider
             android:name="android.support.v4.content.FileProvider"

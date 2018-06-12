@@ -8,9 +8,14 @@
     <string name="title_wordsearch">Wordsearch</string>
     <string name="title_ocr">OCR</string>
     <string name="title_aboutApp">About App</string>
-    <string name="title_displayResults">Display Results</string>
+    <string name="title_displayResults">Boggle This!</string>
     <string name="title_helpScreen">Help</string>
-    <string name="title_boggle5x5">Boggle 5x5</string>
+    <string name="title_boggle5x5">Boggle 5x5 Grid</string>
+
+    //titles only tho
+    <string name="title_boggle2">Boggle 4x4 Grid</string>
+    <string name="title_ocr2">OCR Mode</string>
+    <string name="title_wordsearch2">Wordsearch Mode</string>
 
     //messages
     <string name="boggle_message">Welcome to Boggle Mode!</string>
@@ -25,13 +30,14 @@
 
     //more_options menu
     <string name="load_boggle_image">Load Boggle Image</string>
-    <string name="help">Help</string>
-    <string name="about_app">About App</string>
+    <string name="help">Help and Rules</string>
+    <string name="about_app">More About Boggle This!</string>
     <string name="exit_app">Exit App</string>
 
     //buttons
     <string name="capture_board">Capture Board</string>
     <string name="capture_wordsearch">Capture Wordsearch</string>
     <string name="capture_free_text">Capture Text</string>
+    <string name="randomize_grid">Randomize Grid</string>
 
 </resources>

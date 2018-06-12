@@ -17,7 +17,6 @@ public class DisplayResults extends MainActivity {
         String boggle_results_final = getIntent().getStringExtra("boggle_results");
         BoggleResultsView = (TextView)findViewById(R.id.boggle_results);
         BoggleResultsView.setText(boggle_results_final);
-        BoggleResultsView.setBackgroundColor(Color.parseColor("#88e188"));
         BoggleResultsView.setMovementMethod(new ScrollingMovementMethod());
 
         final ImageButton oMenu = findViewById(R.id.oMenuID);

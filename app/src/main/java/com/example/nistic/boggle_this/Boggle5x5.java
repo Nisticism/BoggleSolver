@@ -1,8 +1,10 @@
 package com.example.nistic.boggle_this;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -15,7 +17,9 @@ import android.provider.MediaStore;
 import android.support.constraint.ConstraintLayout;
 import android.support.constraint.Constraints;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.FileProvider;
+import android.text.InputFilter;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,11 +37,13 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
 
 public class Boggle5x5 extends MainActivity {
     ImageView camArea;
-    ImageButton OMenu;
-    Button solve;
+    Intent intent;
+    public  static final int RequestPermissionCode  = 1 ;
+
     EditText editTexta1;
     EditText editTexta2;
     EditText editTexta3;
@@ -101,9 +107,9 @@ public class Boggle5x5 extends MainActivity {
     String ee5;
 
     String results;
-    String sendresults;
 
-    TextView matrixdisplay;
+    ImageView matrixdisplay;
+    TextView matrixdisplay2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -142,24 +148,82 @@ public class Boggle5x5 extends MainActivity {
         editTexte4 = findViewById(R.id.editTexte4);
         editTexte5 = findViewById(R.id.editTexte5);
 
+        // MAKE ALL CAPS
+
+        editTexta1.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexta2.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexta3.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexta4.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexta5.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
+        editTextb1.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextb2.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextb3.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextb4.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextb5.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
+        editTextc1.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextc2.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextc3.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextc4.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextc5.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
+        editTextd1.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextd2.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextd3.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextd4.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTextd5.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
+        editTexte1.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexte2.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexte3.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexte4.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+        editTexte5.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
         matrixdisplay = findViewById(R.id.matrixdisplay);
+        matrixdisplay.setImageResource(R.drawable.bogglegrid5x5);
+        matrixdisplay2 = findViewById(R.id.matrixdisplay2);
 
         camArea = findViewById(R.id.camArea);
         Button camButton = findViewById(R.id.camButton);
         Button Solve = findViewById(R.id.buttonSolver);
         Button ToggleBoard = findViewById(R.id.button2);
+        editTexta1.requestFocus();
+        StringGetter();
+        String line1 = "  " + aa1 + "  " + aa2 + "  " + aa3 + "  " + aa4 + "  " + aa5;
+        String line2 = "  " + bb1 + "  " + bb2 + "  " + bb3 + "  " + bb4 + "  " + bb5;
+        String line3 = "  " + cc1 + "  " + cc2 + "  " + cc3 + "  " + cc4 + "  " + cc5;
+        String line4 = "  " + dd1 + "  " + dd2 + "  " + dd3 + "  " + dd4 + "  " + dd5;
+        String line5 = "  " + ee1 + "  " + ee2 + "  " + ee3 + "  " + ee4 + "  " + ee5;
+        matrixdisplay2.setText("\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
+
+        Button randomgrid = findViewById(R.id.random_grid);
+        randomgrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                randomize();
+                StringGetter();
+                String line1 = "  " + aa1 + "  " + aa2 + "  " + aa3 + "  " + aa4 + "  " + aa5;
+                String line2 = "  " + bb1 + "  " + bb2 + "  " + bb3 + "  " + bb4 + "  " + bb5;
+                String line3 = "  " + cc1 + "  " + cc2 + "  " + cc3 + "  " + cc4 + "  " + cc5;
+                String line4 = "  " + dd1 + "  " + dd2 + "  " + dd3 + "  " + dd4 + "  " + dd5;
+                String line5 = "  " + ee1 + "  " + ee2 + "  " + ee3 + "  " + ee4 + "  " + ee5;
+                matrixdisplay2.setText("\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
+            }
+        });
+
+
+
         Solve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 StringGetter();
-                //SolverChecker();
-                Toast.makeText(getApplicationContext(), "Hi", Toast.LENGTH_SHORT).show();
-                String line1 = "|  " + aa1 + "  |  " + aa2 + "  |  " + aa3 + "  |  " + aa4 + "  |  " + aa5 + "  |";
-                String line2 = "|  " + bb1 + "  |  " + bb2 + "  |  " + bb3 + "  |  " + bb4 + "  |  " + bb5 + "  |";
-                String line3 = "|  " + cc1 + "  |  " + cc2 + "  |  " + cc3 + "  |  " + cc4 + "  |  " + cc5 + "  |";
-                String line4 = "|  " + dd1 + "  |  " + dd2 + "  |  " + dd3 + "  |  " + dd4 + "  |  " + dd5 + "  |";
-                String line5 = "|  " + ee1 + "  |  " + ee2 + "  |  " + ee3 + "  |  " + ee4 + "  |  " + ee5 + "  |";
-                matrixdisplay.setText("-------------------------------" + "\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5 + "\n" + "-------------------------------");
+                String line1 = "  " + aa1 + "  " + aa2 + "  " + aa3 + "  " + aa4 + "  " + aa5;
+                String line2 = "  " + bb1 + "  " + bb2 + "  " + bb3 + "  " + bb4 + "  " + bb5;
+                String line3 = "  " + cc1 + "  " + cc2 + "  " + cc3 + "  " + cc4 + "  " + cc5;
+                String line4 = "  " + dd1 + "  " + dd2 + "  " + dd3 + "  " + dd4 + "  " + dd5;
+                String line5 = "  " + ee1 + "  " + ee2 + "  " + ee3 + "  " + ee4 + "  " + ee5;
+                matrixdisplay2.setText("\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
 
 
                 // CODE DIRECTLY FROM PC VERSION
@@ -167,7 +231,7 @@ public class Boggle5x5 extends MainActivity {
 
 
                 //String[] bogrows = {a1+a2+a3+a4, b1+b2+b3+b4, c1+c2+c3+c4, d1+d2+d3+d4};
-                if (aa1.length() != 1 || aa2.length() != 1 || aa3.length() != 1 || aa4.length() != 1 || aa5.length() != 1 || bb1.length() != 1 || bb2.length() != 1 || bb3.length() != 1 || bb4.length() != 1 || bb5.length() != 1 || cc1.length() != 1 || cc2.length() != 1 || cc3.length() != 1 || cc4.length() != 1 || cc5.length() != 1 || dd1.length() != 1 || dd2.length() != 1 || dd3.length() != 1 || dd4.length() != 1 || dd5.length() != 1 || ee1.length() != 1 || ee2.length() != 1 || ee3.length() != 1 || ee4.length() != 1 || ee5.length() != 1 ) {
+                if (aa1.length() != 1 ||  isAlpha(aa1) == false || aa2.length() != 1 ||  isAlpha(aa2) == false || aa3.length() != 1 ||  isAlpha(aa3) == false || aa4.length() != 1 ||   isAlpha(aa4) == false || aa5.length() != 1 ||   isAlpha(aa5) == false || bb1.length() != 1 ||   isAlpha(bb1) == false || bb2.length() != 1 ||   isAlpha(bb2) == false || bb3.length() != 1 ||  isAlpha(bb3) == false || bb4.length() != 1 ||  isAlpha(bb4) == false || bb5.length() != 1 ||  isAlpha(bb5) == false || cc1.length() != 1 ||  isAlpha(cc1) == false || cc2.length() != 1 ||  isAlpha(cc2) == false || cc3.length() != 1 ||  isAlpha(cc3) == false || cc4.length() != 1 ||  isAlpha(cc4) == false || cc5.length() != 1 ||  isAlpha(cc5) == false || dd1.length() != 1 ||  isAlpha(dd1) == false || dd2.length() != 1 ||  isAlpha(dd2) == false || dd3.length() != 1 ||  isAlpha(dd3) == false || dd4.length() != 1 ||  isAlpha(dd4) == false || dd5.length() != 1 ||  isAlpha(dd5) == false || ee1.length() != 1 ||  isAlpha(ee1) == false || ee2.length() != 1 ||  isAlpha(ee2) == false || ee3.length() != 1 ||  isAlpha(ee3) == false || ee4.length() != 1 ||  isAlpha(ee4) == false || ee5.length() != 1 ||  isAlpha(ee5) == false) {
                     Toast.makeText(Boggle5x5.this, "Please enter one letter in each box", Toast.LENGTH_SHORT).show();
                     return;
                 }
@@ -231,8 +295,9 @@ public class Boggle5x5 extends MainActivity {
         camButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View camButton) {
-                dispatchTakePictureIntent();
-                //onActivityResult(1, -1, null);
+                intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+
+                startActivityForResult(intent, 7);
             }
         });
 
@@ -244,7 +309,6 @@ public class Boggle5x5 extends MainActivity {
             }
         });
 
-
         BottomNavigationView navigation = findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         navigation.getMenu().findItem(R.id.navigation_boggle).setChecked(true);
@@ -253,41 +317,18 @@ public class Boggle5x5 extends MainActivity {
     private static final int REQUEST_TAKE_PHOTO = 1;
     private Bitmap bitmap;
 
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        // Ensure that there's a camera activity to handle the intent
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            // Create the File where the photo should go
-            File photoFile = null;
-            try {
-                photoFile = createImageFile();
-            } catch (IOException ex) {
-                // Error occurred while creating the File
+    public boolean isAlpha(String name) {
+        char[] chars = name.toCharArray();
 
-            }
-            // Continue only if the File was successfully created
-            if (photoFile != null) {
-                Uri photoURI = FileProvider.getUriForFile(this,
-                        "com.example.android.fileproviderx",
-                        photoFile);
-                Box box = new Box(this);
-                addContentView(box, new ConstraintLayout.LayoutParams(ConstraintLayout.LayoutParams.FILL_PARENT, Constraints.LayoutParams.FILL_PARENT));
-                takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
-                startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+        for (char c : chars) {
+            if(!Character.isLetter(c)) {
+                return false;
             }
         }
+
+        return true;
     }
 
-//    public void SolverChecker() {
-//
-//        if (aa1.length() != 1 || aa2.length() != 1 || aa3.length() != 1 || aa4.length() != 1 || bb1.length() != 1 || bb2.length() != 1 || bb3.length() != 1 || bb4.length() != 1 || cc1.length() != 1 || cc2.length() != 1 || cc3.length() != 1 || cc4.length() != 1 || dd1.length() != 1 || dd2.length() != 1 || dd3.length() != 1 || dd4.length() != 1) {
-//            Toast.makeText(getApplicationContext(), "Please enter 1 letter per field", Toast.LENGTH_SHORT).show();
-//        }
-//        else if (aa1.length() == 1 && aa2.length() == 1 && aa3.length() == 1 && aa4.length() == 1 && bb1.length() == 1 && bb2.length() == 1 && bb3.length() == 1 && bb4.length() == 1 && cc1.length() == 1 && cc2.length() == 1 && cc3.length() == 1 && cc4.length() == 1 && dd1.length() == 1 && dd2.length() == 1 && dd3.length() == 1 && dd4.length() == 1) {
-//            new SolverOpener(aa1,aa2,aa3,aa4,bb1,bb2,bb3,bb4,cc1,cc2,cc3,cc4,dd1,dd2,dd3,dd4);
-//            frame.dispose();
-//        }
-//    }
 
     public void StringGetter() {
         aa1 = editTexta1.getText().toString();
@@ -321,74 +362,85 @@ public class Boggle5x5 extends MainActivity {
         ee5 = editTexte5.getText().toString();
     }
 
-    @Override
+    final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    final int N = alphabet.length();
+
+    Random r = new Random();
+    public void randomize() {
+        editTexta1.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexta2.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexta3.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexta4.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexta5.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+
+        editTextb1.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextb2.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextb3.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextb4.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextb5.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+
+        editTextc1.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextc2.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextc3.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextc4.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextc5.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+
+        editTextd1.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextd2.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextd3.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextd4.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTextd5.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+
+        editTexte1.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexte2.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexte3.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexte4.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+        editTexte5.setText(String.valueOf((char)(r.nextInt(26) + 'A')));
+    }
+
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        InputStream stream = null;
-        if (requestCode == REQUEST_TAKE_PHOTO && resultCode == Activity.RESULT_OK)
-            try {
-                // recyle unused bitmaps
-                if (bitmap != null) {
-                    bitmap.recycle();
-                }
 
-                Bundle extras = data.getExtras();
-                bitmap = (Bitmap) extras.get("data");
-                camArea.setImageBitmap(bitmap);
+        if (requestCode == 7 && resultCode == RESULT_OK) {
 
-            } catch (Exception e) {
-                e.printStackTrace();
-//            } finally ch (IOException e) {
-//            e{
-//                if (stream != null)
-//                    try {
-//                        stream.close();
-//                    } catch (IOException e) {
-//                        e.printStackTrace();
-//                    }
-//            }
-//        }
-            }
-    }
+            Bitmap bitmap = (Bitmap) data.getExtras().get("data");
 
-    String mCurrentPhotoPath;
-
-    private File createImageFile() throws IOException {
-        // Create an image file name
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp + "_";
-        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-        File image = File.createTempFile(
-                imageFileName,  /* prefix */
-                ".jpg",         /* suffix */
-                storageDir      /* directory */
-        );
-
-        // Save a file: path for use with ACTION_VIEW intents
-        mCurrentPhotoPath = image.getAbsolutePath();
-        return image;
-    }
-
-    public class Box extends View {
-        private Paint paint = new Paint();
-        Box(Context context) {
-            super(context);
+            camArea.setImageBitmap(bitmap);
         }
+    }
 
-        @Override
-        protected void onDraw(Canvas canvas) { // Override the onDraw() Method
-            super.onDraw(canvas);
+    public void EnableRuntimePermission(){
 
-            paint.setStyle(Paint.Style.STROKE);
-            paint.setColor(Color.GREEN);
-            paint.setStrokeWidth(10);
+        if (ActivityCompat.shouldShowRequestPermissionRationale(Boggle5x5.this,
+                Manifest.permission.CAMERA))
+        {
 
-            //center
-            int x0 = canvas.getWidth()/2;
-            int y0 = canvas.getHeight()/2;
-            int dx = canvas.getHeight()/3;
-            int dy = canvas.getHeight()/3;
-            //draw guide box
-            canvas.drawRect(x0-dx, y0-dy, x0+dx, y0+dy, paint);
+            //Toast.makeText(Boggle.this,"CAMERA permission allows us to Access CAMERA app", Toast.LENGTH_SHORT).show();
+
+        } else {
+
+            ActivityCompat.requestPermissions(Boggle5x5.this,new String[]{
+                    Manifest.permission.CAMERA}, RequestPermissionCode);
+
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int RC, String per[], int[] PResult) {
+
+        switch (RC) {
+
+            case RequestPermissionCode:
+
+                if (PResult.length > 0 && PResult[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    //Toast.makeText(Boggle.this,"Permission Granted, Now your application can access CAMERA.", Toast.LENGTH_LONG).show();
+
+                } else {
+
+                    Toast.makeText(Boggle5x5.this,"Permission Canceled, Now your application cannot access CAMERA.", Toast.LENGTH_LONG).show();
+
+                }
+                break;
         }
     }
 }

@@ -17,38 +17,49 @@
 
     <TextView
         android:id="@+id/mTextMessageID"
-        android:layout_width="353dp"
+        android:layout_width="386dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="476dp"
+        android:layout_marginBottom="448dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:textSize="20sp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintVertical_bias="0.933" />
 
 
     <ImageView
         android:id="@+id/camArea"
-        android:layout_width="match_parent"
-        android:layout_height="355dp"
+        android:layout_width="310dp"
+        android:layout_height="299dp"
         android:layout_marginBottom="68dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="9"
+        android:rotation="90"
         app:layout_constraintBottom_toBottomOf="@+id/include"
-        app:layout_constraintStart_toStartOf="@+id/include" />
+        app:layout_constraintStart_toStartOf="@+id/include"
+        app:layout_constraintTop_toTopOf="@+id/include"
+        app:layout_constraintVertical_bias="0.97" />
 
     <Button
         android:id="@+id/camButton"
         android:layout_width="198dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="0dp"
+        android:layout_marginBottom="400dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@android:color/holo_green_dark"
+        android:background="@drawable/mybutton2"
         android:onClick="dispatchTakePictureIntent"
         android:text="@string/capture_wordsearch"
         android:textColor="@android:color/white"
-        app:layout_constraintBottom_toTopOf="@+id/camArea"
+        app:layout_constraintBottom_toBottomOf="@+id/include"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
