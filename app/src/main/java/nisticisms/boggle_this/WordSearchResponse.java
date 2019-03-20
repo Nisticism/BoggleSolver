@@ -1,4 +1,4 @@
-package nisticism.boggle_this;
+package nisticisms.boggle_this;
 public class WordSearchResponse {
     public boolean isWord;
     public boolean isPrefix;

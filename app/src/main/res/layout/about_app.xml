@@ -32,19 +32,22 @@
 
     <TextView
         android:id="@+id/about_app_text"
-        android:layout_width="297dp"
-        android:layout_height="344dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/cornerswave"
         android:text=""
         android:textColor="@color/white"
         android:textSize="22sp"
+        android:padding="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.708" />
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintHeight_percent="0.666"
+        app:layout_constraintWidth_percent=".9"/>
 
 </android.support.constraint.ConstraintLayout>

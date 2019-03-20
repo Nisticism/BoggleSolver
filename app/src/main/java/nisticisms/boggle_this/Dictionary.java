@@ -1,4 +1,4 @@
-package nisticism.boggle_this;
+package nisticisms.boggle_this;
 import java.util.*;
 
 public class Dictionary {

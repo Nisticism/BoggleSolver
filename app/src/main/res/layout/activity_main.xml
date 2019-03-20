@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/button3"
-        android:layout_width="66dp"
-        android:layout_height="58dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -23,12 +23,14 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHeight_percent=".084"
+        app:layout_constraintDimensionRatio="W, 1:1"/>
 
     <ImageButton
         android:id="@+id/oMenuID"
-        android:layout_width="38dp"
-        android:layout_height="33dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_gravity="top|right"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
@@ -41,7 +43,10 @@
         app:layout_constraintEnd_toEndOf="@+id/button3"
         app:layout_constraintStart_toStartOf="@+id/button3"
         app:layout_constraintTop_toTopOf="@+id/button3"
-        app:layout_constraintVertical_bias="0.363"></ImageButton>
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHeight_percent=".07"
+        app:layout_constraintDimensionRatio="1">
+    </ImageButton>
 
 
     <android.support.design.widget.BottomNavigationView
@@ -51,6 +56,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/text_view_corners"
         android:backgroundTint="@color/darkerlightgreen"
         app:layout_constraintBottom_toBottomOf="parent"

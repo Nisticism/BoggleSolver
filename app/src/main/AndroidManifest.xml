@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nisticism.boggle_this">
+    package="nisticisms.boggle_this">
     <uses-feature android:name="android.hardware.camera"
         android:required="true" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -11,13 +11,13 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
+        android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
+            android:name="nisticisms.boggle_this.MainActivity"
             android:label="@string/app_name">
         </activity>
         <activity
-            android:name="nisticism.boggle_this.Boggle"
+            android:name="nisticisms.boggle_this.Boggle"
             android:label="@string/app_name">
             <intent-filter android:label="@string/app_name">
                 <action android:name="android.intent.action.MAIN" />
@@ -26,38 +26,38 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Boggle5x5"
+            android:name="nisticisms.boggle_this.Boggle5x5"
             android:label="@string/title_boggle5x5">
         </activity>
         <activity
-            android:name=".Wordsearch"
+            android:name="nisticisms.boggle_this.Wordsearch"
             android:label="@string/title_wordsearch2">
         </activity>
         <activity
-            android:name=".OCR"
+            android:name="nisticisms.boggle_this.OCR"
             android:label="@string/title_ocr2">
         </activity>
         <activity
-            android:name=".AboutApp"
+            android:name="nisticisms.boggle_this.AboutApp"
             android:label="@string/title_aboutApp">
         </activity>
         <activity
-            android:name=".DisplayResults"
+            android:name="nisticisms.boggle_this.DisplayResults"
             android:label="@string/title_displayResults">
         </activity>
         <activity
-            android:name=".Help"
+            android:name="nisticisms.boggle_this.Help"
             android:label="@string/title_helpScreen">
         </activity>
-        <activity android:name=".OCRCam"
+        <activity android:name="nisticisms.boggle_this.OCRCam"
             android:label="@string/title_ocr">
         </activity>
-        <activity android:name=".LoadBoggleImage"
+        <activity android:name="nisticisms.boggle_this.LoadBoggleImage"
             android:label="Load Boggle Image">
         </activity>
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="nisticism.android.fileproviderx"
+            android:authorities="nisticisms.android.fileproviderx"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

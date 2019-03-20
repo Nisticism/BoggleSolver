@@ -12,43 +12,73 @@
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/boggle_results"
-        android:layout_width="355dp"
-        android:layout_height="423dp"
+    <ScrollView
+        android:id="@+id/scrollViewID"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text=""
-        android:maxLines = "500"
-        android:scrollbars = "vertical"
-        android:background="@drawable/text_view_corners"
-        android:backgroundTint="#88e188"
+        android:paddingStart="10dp"
+        android:paddingEnd="30dp"
         app:layout_constraintBottom_toBottomOf="@+id/include"
-        app:layout_constraintEnd_toEndOf="@+id/include"
-        app:layout_constraintHorizontal_bias="0.538"
-        app:layout_constraintStart_toStartOf="@+id/include"
-        app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintHeight_percent=".74"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent=".92">
 
+        <TextView
+            android:id="@+id/boggle_results"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/text_view_corners"
+            android:backgroundTint="@color/realldarkgreen"
+            android:maxLines="500"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:paddingBottom="20dp"
+            android:paddingTop="8dp"
+            android:scrollbarSize="20dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            android:text=""
+            app:layout_constraintBottom_toBottomOf="@+id/scrollViewID"
+            app:layout_constraintEnd_toEndOf="@+id/scrollViewID"
+            app:layout_constraintHeight_percent=".74"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/scrollViewID"
+            app:layout_constraintTop_toTopOf="@+id/scrollViewID"
+            app:layout_constraintVertical_bias="0.5"
+            app:layout_constraintWidth_percent=".92" />
+
+    </ScrollView>
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="293dp"
-        android:layout_height="33dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="BOGGLE RESULTS"
         android:textSize="25dp"
         android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/boggle_results"
+        app:layout_constraintBottom_toTopOf="@+id/scrollViewID"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.24"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.5"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintHeight_percent=".08"/>
+
 
 </android.support.constraint.ConstraintLayout>

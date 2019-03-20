@@ -1,8 +1,10 @@
-package nisticism.boggle_this;
+package nisticisms.boggle_this;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -16,19 +18,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.PrintStream;
-import java.io.PrintWriter;
+import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.Random;
+
+import nisticisms.boggle_this.solver.Board;
+import nisticisms.boggle_this.solver.TreeSolver;
 
 public class Boggle5x5 extends MainActivity {
     ImageView camArea;
     Intent intent;
     public  static final int RequestPermissionCode  = 1 ;
 
+    private long startTimer;
     EditText editTexta1;
     EditText editTexta2;
     EditText editTexta3;
@@ -175,12 +184,12 @@ public class Boggle5x5 extends MainActivity {
         Button ToggleBoard = findViewById(R.id.button2);
         editTexta1.requestFocus();
         StringGetter();
-        String line1 = "  " + aa1 + "  " + aa2 + "  " + aa3 + "  " + aa4 + "  " + aa5;
-        String line2 = "  " + bb1 + "  " + bb2 + "  " + bb3 + "  " + bb4 + "  " + bb5;
-        String line3 = "  " + cc1 + "  " + cc2 + "  " + cc3 + "  " + cc4 + "  " + cc5;
-        String line4 = "  " + dd1 + "  " + dd2 + "  " + dd3 + "  " + dd4 + "  " + dd5;
-        String line5 = "  " + ee1 + "  " + ee2 + "  " + ee3 + "  " + ee4 + "  " + ee5;
-        matrixdisplay2.setText("\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
+        String line1 = lineMaker(1);
+        String line2 = lineMaker(2);
+        String line3 = lineMaker(3);
+        String line4 = lineMaker(4);
+        String line5 = lineMaker(5);
+        matrixdisplay2.setText(line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
 
         Button randomgrid = findViewById(R.id.random_grid);
         randomgrid.setOnClickListener(new View.OnClickListener() {
@@ -188,12 +197,12 @@ public class Boggle5x5 extends MainActivity {
             public void onClick(View v) {
                 randomize();
                 StringGetter();
-                String line1 = "  " + aa1 + "  " + aa2 + "  " + aa3 + "  " + aa4 + "  " + aa5;
-                String line2 = "  " + bb1 + "  " + bb2 + "  " + bb3 + "  " + bb4 + "  " + bb5;
-                String line3 = "  " + cc1 + "  " + cc2 + "  " + cc3 + "  " + cc4 + "  " + cc5;
-                String line4 = "  " + dd1 + "  " + dd2 + "  " + dd3 + "  " + dd4 + "  " + dd5;
-                String line5 = "  " + ee1 + "  " + ee2 + "  " + ee3 + "  " + ee4 + "  " + ee5;
-                matrixdisplay2.setText("\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
+                String line1 = lineMaker(1);
+                String line2 = lineMaker(2);
+                String line3 = lineMaker(3);
+                String line4 = lineMaker(4);
+                String line5 = lineMaker(5);
+                matrixdisplay2.setText(line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
             }
         });
 
@@ -203,12 +212,12 @@ public class Boggle5x5 extends MainActivity {
             @Override
             public void onClick(View v) {
                 StringGetter();
-                String line1 = "  " + aa1 + "  " + aa2 + "  " + aa3 + "  " + aa4 + "  " + aa5;
-                String line2 = "  " + bb1 + "  " + bb2 + "  " + bb3 + "  " + bb4 + "  " + bb5;
-                String line3 = "  " + cc1 + "  " + cc2 + "  " + cc3 + "  " + cc4 + "  " + cc5;
-                String line4 = "  " + dd1 + "  " + dd2 + "  " + dd3 + "  " + dd4 + "  " + dd5;
-                String line5 = "  " + ee1 + "  " + ee2 + "  " + ee3 + "  " + ee4 + "  " + ee5;
-                matrixdisplay2.setText("\n" + line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
+                String line1 = lineMaker(1);
+                String line2 = lineMaker(2);
+                String line3 = lineMaker(3);
+                String line4 = lineMaker(4);
+                String line5 = lineMaker(5);
+                matrixdisplay2.setText(line1+"\n" + line2+"\n" + line3+"\n" + line4+"\n" + line5);
 
 
                 // CODE DIRECTLY FROM PC VERSION
@@ -224,27 +233,23 @@ public class Boggle5x5 extends MainActivity {
                 //String[] allwords;
                 //String commaboard2 = "ABCD,RHAO,OSND,OTHA";
 
-                Solver s = new Solver();
-                s.generateBoardFromString(commaboard);
-                String dictString = "";
+                //Solver s = new Solver();
+                //s.generateBoardFromString(commaboard);
+
+                String[] arrayboard = {aa1,aa2,aa3,aa4,aa5,bb1,bb2,bb3,bb4,bb5,cc1,cc2,cc3,cc4,cc5,dd1,dd2,dd3,dd4,dd5,ee1,ee2,ee3,ee4,ee5};
+
+                Board b = new Board(arrayboard, 5);
+                nisticisms.boggle_this.solver.Solver sss = new TreeSolver(b);
+                ArrayList<String> dictArray = new ArrayList<String>();
 
                 try {
-                    dictString = s.dictionaryCreation("dictionary.txt",getApplicationContext());
+                    dictArray = dictionaryCreation("dictionary.txt",getApplicationContext());
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
 
                 File dictfile = new File(getApplicationContext().getFilesDir(), "dictionary2.txt");
-
-                try (PrintWriter out = new PrintWriter(dictfile)) {
-                    out.println(dictString);
-                } catch (FileNotFoundException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-
-//        s.dictionaryCreation();
 
                 // Create a stream to hold the output
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -254,8 +259,34 @@ public class Boggle5x5 extends MainActivity {
                 // Tell Java to use your special stream
                 System.setOut(ps);
 
-                s.loadDictionary(dictfile.getPath());
-                s.run();
+
+                ArrayList resultsArray = new ArrayList();
+                startTimer();
+                for (int i = 0; i < dictArray.size(); i ++) {
+                    String currentword = dictArray.get(i);
+                    if (sss.containsWord(currentword)) {
+                        resultsArray.add(currentword);
+                    }
+                }
+
+                System.out.println("<br>");
+                System.out.println(resultsArray.size() + " results found in " + endTimer() + " seconds, for grid: ");
+                System.out.println("<br>");
+                System.out.println("<br>");
+                System.out.println(line1);
+                System.out.println("<br>");
+                System.out.println(line2);
+                System.out.println("<br>");
+                System.out.println(line3);
+                System.out.println("<br>");
+                System.out.println(line4);
+                System.out.println("<br>");
+                System.out.println(line5);
+                System.out.println("<br>");
+                System.out.println("<br>");
+                for (int i = 0; i < resultsArray.size(); i ++) {
+                    System.out.print(resultsArray.get(i) + " ");
+                }
 
                 // Put things back
                 System.out.flush();
@@ -290,6 +321,7 @@ public class Boggle5x5 extends MainActivity {
             @Override
             public void onClick(View ToggleBoard) {
                 Intent intent = new Intent(Boggle5x5.this, Boggle.class);
+                finish();
                 startActivity(intent);
             }
         });
@@ -312,6 +344,33 @@ public class Boggle5x5 extends MainActivity {
         }
 
         return true;
+    }
+
+    public ArrayList<String> dictionaryCreation(String filename, Context mycontext) throws IOException {
+        AssetManager am = mycontext.getAssets();
+        InputStream is = am.open(filename);
+        InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+        BufferedReader br = new BufferedReader(isr);
+        String line;
+        ArrayList<String> dictarray = new ArrayList<String>();
+        while ((line = br.readLine()) != null)
+        {
+            dictarray.add(line);
+        }
+        br.close();
+        isr.close();
+        is.close();
+        return dictarray;
+    }
+
+    private String endTimer() {
+        DecimalFormat df = new DecimalFormat("#.###");
+        double elapsed = (new java.util.Date().getTime() - startTimer) * 0.001;
+        return df.format(elapsed);
+    }
+
+    private void startTimer() {
+        startTimer = new java.util.Date().getTime();
     }
 
 
@@ -345,6 +404,86 @@ public class Boggle5x5 extends MainActivity {
         ee3 = editTexte3.getText().toString();
         ee4 = editTexte4.getText().toString();
         ee5 = editTexte5.getText().toString();
+    }
+
+    public String lineMaker(Integer x) {
+        String a = "";
+        String b = "";
+        String c = "";
+        String d = "";
+        String e = "";
+        if (x == 1) {
+            a = aa1;
+            b = aa2;
+            c = aa3;
+            d = aa4;
+            e = aa5;
+        }
+        if (x == 2) {
+            a = bb1;
+            b = bb2;
+            c = bb3;
+            d = bb4;
+            e = bb5;
+        }
+        if (x == 3) {
+            a = cc1;
+            b = cc2;
+            c = cc3;
+            d = cc4;
+            e = cc5;
+        }
+        if (x == 4) {
+            a = dd1;
+            b = dd2;
+            c = dd3;
+            d = dd4;
+            e = dd5;
+        }
+        if (x == 5) {
+            a = ee1;
+            b = ee2;
+            c = ee3;
+            d = ee4;
+            e = ee5;
+        }
+        String aa = "  " + a + " ";
+        String bb = " " + b + " ";
+        String cc = " " + c + " ";
+        String dd = " " + d + " ";
+        String ee = " " + e;
+        if (a.equals("I")) {
+            aa = "   " + a + " ";
+        }
+        if (b.equals("I")) {
+            bb = "  " + b + " ";
+        }
+        if (c.equals("I")) {
+            cc = "  " + c + " ";
+        }
+        if (d.equals("I")) {
+            dd = "  " + d + " ";
+        }
+        if (e.equals("I")) {
+            ee = "  " + e;
+        }
+        if (a.equals("W") || a.equals("M")) {
+            aa = "  " + a;
+        }
+        if (b.equals("W") || b.equals("M")) {
+            bb = " " + b;
+        }
+        if (c.equals("W") || c.equals("M")) {
+            cc = " " + c;
+        }
+        if (d.equals("W") || d.equals("M")) {
+            dd = " " + d;
+        }
+        if (e.equals("W") || e.equals("M")) {
+            ee = " " + e;
+        }
+        String s = aa + bb + cc + dd + ee;
+        return  s;
     }
 
     final String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";

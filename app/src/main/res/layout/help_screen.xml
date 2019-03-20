@@ -32,21 +32,25 @@
 
     <TextView
         android:id="@+id/help_screen_text"
-        android:layout_width="332dp"
-        android:layout_height="171dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/cornerswave"
         android:maxLines="500"
         android:scrollbars="vertical"
+        android:scrollbarStyle="outsideInset"
+        android:padding="8dp"
         android:text=""
         android:textColor="@color/white"
         android:textSize="18sp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.282" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <ImageView
         android:id="@+id/boggleExplanation"
@@ -59,26 +63,28 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/help_screen_text"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.649"
+        app:layout_constraintVertical_bias="0.6"
         app:srcCompat="@drawable/boggle_explanation" />
 
     <TextView
         android:id="@+id/help_screen_text2"
-        android:layout_width="332dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="40dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/cornerswave"
-
         android:maxLines="500"
         android:scrollbars="vertical"
         android:text=""
         android:textColor="@color/white"
         android:textSize="18sp"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/include"
-        app:layout_constraintVertical_bias="0.95" />
+        app:layout_constraintHeight_percent=".18"
+        app:layout_constraintWidth_percent=".9"
+        app:layout_constraintVertical_bias="0.94" />
 
 </android.support.constraint.ConstraintLayout>

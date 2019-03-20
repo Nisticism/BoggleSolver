@@ -1,4 +1,4 @@
-package nisticism.boggle_this;
+package nisticisms.boggle_this;
 
 import android.content.Intent;
 import android.graphics.Bitmap;

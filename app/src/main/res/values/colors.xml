@@ -14,4 +14,6 @@
     <color name="bluepurple">#2a2ea3</color>
     <color name="darkbluegrey">#1d416b</color>
     <color name="darkerlightgreen">#56bf6c</color>
+    <color name="black">#000000</color>
+    <color name="lightblue">#ADD8E6</color>
 </resources>

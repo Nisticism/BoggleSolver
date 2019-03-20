@@ -1,4 +1,4 @@
-package nisticism.boggle_this;
+package nisticisms.boggle_this;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
@@ -34,6 +34,7 @@ public class Help extends MainActivity {
                 "Other variations of Boggle use a 5x5 grid.  The object of the game is to find as many words as possible " +
                 "by connecting adjacent letters in any direction, without using the same letter twice.  Players generally " +
                 "have 3 minutes to find as many words as possible before the round is over.");
+        textbody.setMovementMethod(new ScrollingMovementMethod());
         textbody2 = findViewById(R.id.help_screen_text2);
         textbody2.setMovementMethod(new ScrollingMovementMethod());
         textbody2.setText(" In the above diagram you can see how the word 'PEACE' is made" + "\n" + "\n" +
